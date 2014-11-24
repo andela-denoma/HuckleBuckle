@@ -1,0 +1,146 @@
+
+/************************
+        GENERAL
+***********************/
+body {
+  background: url("../img/backgdimg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+/************************
+        HEADER
+*************************/
+header {
+    text-align: center;
+}
+header img {
+  height: 100px;
+  float: right;
+  margin-right: 2%;
+}
+
+h1 {
+    font-family: 'Viga', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    letter-spacing: -2px;
+    margin: 10px auto;
+}
+
+h1 .hot {
+    color: red;
+    font-size: 2em;
+    text-shadow: 5px 5px 2px purple;
+}
+
+h1 .cold {
+    font-size: 2em;
+    color: aqua;
+    text-shadow: 5px 5px 2px navy;
+}
+
+
+header h2 {
+    color: red;
+    font-size: 2em;
+    margin: 0 auto 50px;
+}
+
+/**********************
+        FORM
+**********************/
+#form {
+  text-align: center;
+  display: block;
+  color: #000;
+  height: 30px;
+}
+
+#form span {
+  color: green;
+  font-size: 1.5em;
+  margin-bottom: 2%;
+  padding: 0 0 1%;
+}
+
+#form h2 {
+  font-size: 2em;
+  padding: 3%;
+  color: red;
+}
+
+/*****************
+    BUTTONs
+*****************/
+#submit, #reset {
+  background: #00eeee;
+  border: none;
+  color: #9932cc;
+  font-weight: bold;
+  padding: 0.85%; 
+  text-align: center;
+  margin: 2% 1%;
+ }
+
+#guess_number {
+  padding: 0.75%;
+}
+/*********************
+       WRAPPER
+*********************/
+#wrapper {
+  background: lightgreen;
+  width: 50%;
+  height: 300px;
+  text-align: center;
+  clear: both;
+  margin: auto;
+  border-radius: 20px;
+
+}
+
+#demo {
+  font-family: 'Viga', sans-serif;
+  color: green;
+  font-size: 1.5em;
+}
+/********************
+  MEDIA QUERY
+********************/
+@media screen and (max-width: 480px){
+  header img {
+    height: 50px;
+  }
+  
+  h1 .hot, h1 .cold{
+    font-size: 48px;
+  }
+  
+  header h2{
+    font-size: 20px;
+  }
+  #wrapper {
+    margin: 0 10px;
+    width: 270px;
+  }
+}
+
+@media screen and (max-width: 720px){
+  header img {
+    height: 50px;
+  }
+  
+  h1 .hot, h1 .cold{
+    font-size: 48px;
+  }
+  
+  header h2{
+    font-size: 23px;
+  }
+  #wrapper {
+    width: 400px;
+  }
+}
+
