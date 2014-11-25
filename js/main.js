@@ -1,81 +1,67 @@
-var maxNum = 100;
-
 var hotCold = {
-  guess: document.getElementsByTagName("button")[0], //click event
-  reset: document.getElementById("reset"),
-  inputBox: document.getElementById('guess_number'),
-  initNum: 0,
-  random: Math.floor(Math.random() * (maxNum - 0 + 1) + 0),
-  userInput: document.getElementById("guess_number").value,
-  
-  initialize: function() {
+  computerGuess: null,
+  output:document.getElementById('output'),
+  userGuess: document.getElementById('guess'),
+  previousGuess: 101,
+  max:100,
+  min:0,
 
-   //Prevent browser default onclick behaviour
-   hotCold.guess.addEventListener("click", function (event) {
-      event.preventDefault();
-      console.log("Submit Guess");
-      hotCold.play();
-   });
-
-  // Bind a click of the reset button to browser reload
-  hotCold.reset.addEventListener("click", function (event) {
-      event.preventDefault();
-      location.reload();
-   });
-
-  // Bind enter key to the gameplay object function for browsers that don't always interpret an enter press as a form submission.
-  hotCold.inputBox.addEventListener('keypress', function(e) {
-     if (e.which == 13) {
-      hotCold.play(); 
-      }
-  });
+  initialize: function(){
+    this.computerGuess = Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+    console.log("computerGuess: " + this.computerGuess);
   },
 
-  //VALIDATE USERS INPUT
-  numValidate: function(userInput) {
+  validate: function(){
+    var guess= document.getElementById('guess').value;
 
-    if(userInput === " " || isNaN(userInput)){
-      document.getElementById("demo").innerHTML = "Please Enter a valid Number";
-    }
-    else if(0 > userInput){
-      document.getElementById("demo").innerHTML = "You have to use positive Numbers";
-    }
-    else if(userInput > maxNum){
-      document.getElementById("demo").innerHTML = "Your Number Should be within a range of One(1) to Hundred(100)";
-    }
-    else{
+    if(isNaN(guess)){
+      output.innerHTML = 'Enter a valid number';
       return true;
     }
-    return false;
-    },
+    else if (parseInt(guess) > 100 || parseInt(guess) < 0){
+       output.innerHTML = 'Your guess is out of the 1 to 100 range';
+       return false;
+    } 
+    else {
+      return true;
+    }
+  },
 
-  //GAME CONFIGURATION
-  play: function(userInput) {
-   
-    var userInput = parseInt(document.getElementById('guess_number').value, 10);
-    if(!hotCold.numValidate(userInput)){
+  replay: function(){
+    var userInput = document.getElementById('guess');
+    var numUserInput = parseInt(userInput.value)
+    if(!this.validate())
       return;
+    else if(this.computerGuess === numUserInput){
+      output.innerHTML = 'You guessed it';
     }
-    if(userInput == hotCold.random){
-      document.getElementById("demo").innerHTML = "You Guessed It.";
-      $("body").css("background-image", "url(img/backimg.jpg)");
+    else if(Math.abs(this.computerGuess - numUserInput) > Math.abs(this.computerGuess - this.previousGuess)){
+      output.innerHTML = 'You are getting colder';
     }
-    else if(Math.abs(hotCold.random - userInput) > Math.abs(hotCold.random - this.initNum)){
-      document.getElementById("demo").innerHTML = "You're getting cold!";
-      $("body").css("background-image", "url(img/cold.jpg)");
-    }
-    else if(Math.abs(hotCold.random - userInput) < Math.abs(hotCold.random - this.initNum)){
-      document.getElementById("demo").innerHTML = "You're getting Warm";
-      $("body").css("background-image", "url(img/hotimg.jpg)");
-    }
+    else if( Math.abs(this.computerGuess - numUserInput) < Math.abs(this.computerGuess - this.previousGuess)){
+      output.innerHTML = 'You are getting hotter';
 
-    this.initNum = userInput;
-    console.log(this.random);
     }
-
-   }
-
-      
-    window.onload = function(){
-    hotCold.initialize();
+    else if(Math.abs(numUserInput === this.previousGuess)){
+      output.innerHTML = 'You are getting neither hotter nor colder';
     }
+    this.previousGuess = numUserInput; 
+  }
+};
+  
+hotCold.initialize();
+
+document.getElementById('submit').addEventListener("click", function(e){
+  e.preventDefault();
+  hotCold.replay();
+});
+
+
+  
+
+   
+
+    
+
+
+
