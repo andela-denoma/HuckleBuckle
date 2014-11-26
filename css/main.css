@@ -17,33 +17,34 @@ header {
 }
 
 h1 {
-    text-align: center;
-    clear: both;
-    font-family: 'Viga', sans-serif;
-    font-size: 50px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin: 3%;
+  text-align: center;
+  clear: both;
+  font-family: 'Viga', sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 3%;
 
 }
 
 h1 .hot {
-    color: red;
-    font-size: 2em;
-    text-shadow: 5px 5px 2px purple;
+  color: red;
+  font-size: 2em;
+  text-shadow: 5px 5px 2px purple;
 }
 
 h1 .cold {
-    font-size: 2em;
-    color: aqua;
-    text-shadow: 5px 5px 2px navy;
+  font-size: 2em;
+  color: aqua;
+  text-shadow: 5px 5px 2px navy;
 }
 
 
 header h2 {
-    color: red;
-    font-size: 2em;
-    margin: 0 auto 50px;
+  font-family: 'Viga', sans-serif;
+  color: green;
+  font-size: 2em;
+  margin: 0 auto 50px;
 }
 
 
@@ -65,19 +66,21 @@ header h2 {
         FORM
 **********************/
 #guessNumber {
+  font-family: 'Viga', sans-serif;
   font-size: 2em;
   text-align: center;
   color: red;
 }
 
-#form span {
+#guessNumber span {
   color: green;
   font-size: 1.5em;
   margin-bottom: 2%;
   padding: 0 0 1%;
 }
 
-#form h2 {
+#guessNumber h2 {
+  font-family: 'Viga', sans-serif;
   font-size: 2em;
   padding: 6%;
   color: red;
@@ -91,9 +94,9 @@ header h2 {
   border: none;
   color: #9932cc;
   font-weight: bold;
-  padding: 0.85%; 
+  padding: 0.75% 0.55%; 
   text-align: center;
-  margin: 2% 1%;
+  margin-top: 5px;
  }
 
 #guess{
@@ -101,6 +104,7 @@ header h2 {
 }
 
 #output {
+  font-family: 'Viga', sans-serif;
   color: green;
   font-size: 2em;
   text-align: center;
