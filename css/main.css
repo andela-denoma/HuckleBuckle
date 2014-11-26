@@ -13,20 +13,18 @@ body {
         HEADER
 *************************/
 header {
-    text-align: center;
-}
-header img {
-  height: 100px;
-  float: right;
-  margin-right: 2%;
+  text-align: center;
 }
 
 h1 {
+    text-align: center;
+    clear: both;
     font-family: 'Viga', sans-serif;
     font-size: 50px;
     font-weight: bold;
-    letter-spacing: -2px;
-    margin: 10px auto;
+    letter-spacing: 2px;
+    margin: 3%;
+
 }
 
 h1 .hot {
@@ -48,14 +46,28 @@ header h2 {
     margin: 0 auto 50px;
 }
 
+
+/*********************
+       WRAPPER
+*********************/
+#wrapper {
+  background: lightgreen;
+  width: 50%;
+  height: 300px;
+  text-align: center;
+  clear: both;
+  margin: auto;
+  border-radius: 20px;
+
+}
+
 /**********************
         FORM
 **********************/
-#form {
+#guessNumber {
+  font-size: 2em;
   text-align: center;
-  display: block;
-  color: #000;
-  height: 30px;
+  color: red;
 }
 
 #form span {
@@ -74,7 +86,7 @@ header h2 {
 /*****************
     BUTTONs
 *****************/
-#submit, #reset {
+#submit, #restart {
   background: #00eeee;
   border: none;
   color: #9932cc;
@@ -84,28 +96,17 @@ header h2 {
   margin: 2% 1%;
  }
 
-#guess_number {
-  padding: 0.75%;
-}
-/*********************
-       WRAPPER
-*********************/
-#wrapper {
-  background: lightgreen;
-  width: 50%;
-  height: 300px;
-  text-align: center;
-  clear: both;
-  margin: auto;
-  border-radius: 20px;
-
+#guess{
+  padding: 0.55% 0;
 }
 
-#demo {
-  font-family: 'Viga', sans-serif;
+#output {
   color: green;
-  font-size: 1.5em;
+  font-size: 2em;
+  text-align: center;
 }
+
+
 /********************
   MEDIA QUERY
 ********************/

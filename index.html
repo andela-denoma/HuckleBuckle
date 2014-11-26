@@ -3,17 +3,25 @@
   <head>
     <meta charset ="utf-8">
     <title>Guessing Game</title>
-    <link rel ="stylesheet" href ="main.css">
+    <link rel ="stylesheet" href ="css/main.css">
   </head>
   <body>
-    <p>Pick a number between 1 and 100</p>
-    <form id ="guessNumber">
-      <input type="text" name="guess" id="guess">
-      <br>
-      <button id="submit" type="submit" value="Take a Guess">Take A Guess</button>
-      <button id="restart" class="turn_off">New Game</button>
+    <header>
+      <h1><span class ="hot">Hot</span>or<span class ="cold">Cold</span></h1>
+      <h2>Enter a number between 0 and 100</h2>
+    </header>
+    <div class="wrapper">
+      <form id ="guessNumber">
+        <p>Pick a number between 1 and 100</p>
+        <input type="text" name="guess" id="guess">
+        <br>
+        <button id="submit" type="submit" value="Take a Guess">Take A Guess</button>
+        <button id="restart" class="turn_off">New Game</button>
     </form>
-    <p id="output">Output</p>
+      <div>
+        <p id="output">Let the Game Begin</p>
+      </div>
+    </div>
     <script src="js/main.js" type="text/javascript"></script>
   </body>
 </html>
